@@ -1,63 +1,97 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>1 Euro Project</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1EuroProject - O idee globală</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #f5f5f5;
-      color: #111;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f9fafa;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+      background-color: #ffffff;
+    }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #2b4f81;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    main {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
       padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
     }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    p {
-      font-size: 1.2rem;
-      max-width: 600px;
+
+    #intro p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: center;
       margin-bottom: 2rem;
     }
-    a.button {
-      background: #111;
-      color: #fff;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
+
+    #donate-btn {
+      background-color: #2b4f81;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
-    a.button:hover {
-      background: #333;
+
+    #donate-btn:hover {
+      background-color: #1f3b60;
     }
-    .counter {
+
+    #donation-counter {
       margin-top: 2rem;
-      font-size: 1.5rem;
+      font-weight: 600;
+      color: #4e6a89;
     }
+
     footer {
-      margin-top: 4rem;
+      text-align: center;
+      padding: 2rem;
       font-size: 0.9rem;
-      color: #555;
+      background-color: #f1f3f6;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <h1>Un euro. O idee. O lume întreagă.</h1>
-  <p>Vreau să fiu primul om din lume care primește 1 euro de la 100 de milioane de oameni. Nu pentru că-l merit, ci pentru că vreau să dovedesc că o idee simplă, sinceră și umană poate aduna oameni de pe tot globul.</p>
-  <a href="https://buymeacoffee.com/exemplu" class="button" target="_blank">Donează 1 euro</a>
-  <div class="counter">👥 Oameni care au donat: <strong>0</strong></div>
+  <header>
+    <h1>Un euro. O idee. O lume întreagă.</h1>
+    <nav></nav>
+  </header>
+
+  <main>
+    <section id="intro">
+      <p>Vreau să fiu primul om care primește 1 euro de la 100 de milioane de oameni. Nu e despre bani. E despre oameni, despre solidaritate și o idee simplă: împărțind puțin putem aduna enorm.</p>
+      <button id="donate-btn">Donează 1 Euro</button>
+      <div id="donation-counter">0 oameni au donat.</div>
+    </section>
+  </main>
+
   <footer>
-    Made with 💡 în Germania • www.1euro.one
+    <p>&copy; 2025 1EuroProject. Toate drepturile rezervate.</p>
   </footer>
 </body>
 </html>
