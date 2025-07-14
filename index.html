@@ -1,97 +1,66 @@
 <!DOCTYPE html>
 <html lang="ro">
-<head> 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>1EuroProject - O idee globală</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+<head>
+  <meta charset="UTF-8">
+  <title>1EuroProject - Donează</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background-color: #f9fafa;
-      color: #333;
-    }
-
-    header {
+      background-color: #fff;
+      color: #111;
+      font-family: sans-serif;
       text-align: center;
-      padding: 4rem 2rem 2rem;
-      background-color: #ffffff;
+      padding: 3rem 1rem;
     }
-
     h1 {
-      font-family: 'Montserrat', sans-serif;
       font-size: 2.5rem;
       margin-bottom: 1rem;
-      color: #2b4f81;
     }
-
-    nav {
-      margin-top: 1rem;
-    }
-
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    #intro p {
+    p {
       font-size: 1.1rem;
-      line-height: 1.6;
-      text-align: center;
       margin-bottom: 2rem;
     }
-
-    #donate-btn {
-      background-color: #2b4f81;
+    .btn {
+      background: black;
       color: white;
       border: none;
-      padding: 0.8rem 1.5rem;
+      padding: 0.8rem 1.6rem;
       font-size: 1rem;
-      border-radius: 6px;
+      border-radius: 4px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
-
-    #donate-btn:hover {
-      background-color: #1f3b60;
+    .social {
+      margin-top: 3rem;
     }
-
-    #donation-counter {
-      margin-top: 2rem;
-      font-weight: 600;
-      color: #4e6a89;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      background-color: #f1f3f6;
-      color: #666;
+    .social a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      text-decoration: none;
+      font-size: 1rem;
+      color: black;
+      border: 1px solid #000;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Un euro. O idee. O lume întreagă.</h1>
-    <nav></nav>
-  </header>
+  <h1>Un euro. O idee. O lume întreagă.</h1>
+  <p>Donează 1 euro și spune mai departe. Poți face diferența!</p>
 
-  <main>
-    <section id="intro">
-      <p>Vreau să fiu primul om care primește 1 euro de la 100 de milioane de oameni. Nu e despre bani. E despre oameni, despre solidaritate și o idee simplă: împărțind puțin putem aduna enorm.</p>
-      <button id="donate-btn">Donează 1 Euro</button>
-      <div id="donation-counter">0 oameni au donat.</div>
-    </section>
-  </main>
+  <form action="https://www.paypal.com/donate" method="post" target="_blank">
+    <input type="hidden" name="hosted_button_id" value="YOUR_PAYPAL_BUTTON_ID" />
+    <input type="hidden" name="return" value="https://www.1europroject.com/thankyou.html" />
+    <input class="btn" type="submit" value="Donează 1 Euro">
+  </form>
 
-  <footer>
-    <p>&copy; 2025 1EuroProject. Toate drepturile rezervate.</p>
-  </footer>
+  <div class="social">
+    <p>Distribuie ideea:</p>
+    <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+    <a href="https://www.tiktok.com/" target="_blank">TikTok</a>
+    <a href="https://www.whatsapp.com/" target="_blank">WhatsApp</a>
+    <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+  </div>
 </body>
 </html>
