@@ -1,66 +1,206 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>1EuroProject - Donează</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1 Euro Project</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #fff;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
       color: #111;
-      font-family: sans-serif;
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 2rem 1rem;
     }
+
+    .lang-selector {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+
+    .lang-selector button {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+
+    .euro-symbol {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      font-size: 2.2rem;
+      margin: 1rem 0 0.5rem;
     }
+
     p {
       font-size: 1.1rem;
-      margin-bottom: 2rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
     }
-    .btn {
-      background: black;
-      color: white;
+
+    .donate-button {
+      background-color: #000;
+      color: #fff;
+      padding: 14px 28px;
+      font-size: 1.1rem;
       border: none;
-      padding: 0.8rem 1.6rem;
-      font-size: 1rem;
-      border-radius: 4px;
+      border-radius: 8px;
       cursor: pointer;
+      transition: all 0.3s ease;
     }
-    .social {
+
+    .donate-button:hover {
+      box-shadow: 0 0 10px #000;
+      transform: scale(1.05);
+    }
+
+    .thank-you {
+      margin-top: 1.5rem;
+      font-weight: bold;
+      display: none;
+    }
+
+    .social-icons {
       margin-top: 3rem;
     }
-    .social a {
+
+    .social-icons a {
+      margin: 0 10px;
       display: inline-block;
-      margin: 0 0.5rem;
+      font-size: 1.2rem;
       text-decoration: none;
-      font-size: 1rem;
-      color: black;
-      border: 1px solid #000;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
+    }
+
+    .footer {
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .footer a {
+      color: #555;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Un euro. O idee. O lume întreagă.</h1>
-  <p>Donează 1 euro și spune mai departe. Poți face diferența!</p>
-
-  <form action="https://www.paypal.com/donate" method="post" target="_blank">
-    <input type="hidden" name="hosted_button_id" value="YOUR_PAYPAL_BUTTON_ID" />
-    <input type="hidden" name="return" value="https://www.1europroject.com/thankyou.html" />
-    <input class="btn" type="submit" value="Donează 1 Euro">
-  </form>
-
-  <div class="social">
-    <p>Distribuie ideea:</p>
-    <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-    <a href="https://www.tiktok.com/" target="_blank">TikTok</a>
-    <a href="https://www.whatsapp.com/" target="_blank">WhatsApp</a>
-    <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+  <div class="lang-selector">
+    <button onclick="setLang('en')">🇬🇧</button>
+    <button onclick="setLang('es')">🇪🇸</button>
+    <button onclick="setLang('ar')">🇸🇦</button>
+    <button onclick="setLang('zh')">🇨🇳</button>
+    <button onclick="setLang('ru')">🇷🇺</button>
   </div>
+
+  <div class="euro-symbol">💶</div>
+  <h1 id="title">One euro. One choice. A better life.</h1>
+  <p id="subtitle">
+    A better world begins with a small act.  
+    Donate 1 euro and support an idea that can unite, heal, and inspire.  
+    Every contribution says: "I care."  
+    And you're not alone.
+  </p>
+
+  <button class="donate-button" onclick="showThankYou()">
+    Donate 1 Euro
+  </button>
+
+  <div class="thank-you" id="thankYou">Thank you for your support! ❤️</div>
+
+  <div class="social-icons">
+    <p>Share the idea:</p>
+    <a href="#" title="Facebook">📘</a>
+    <a href="#" title="Instagram">📸</a>
+    <a href="#" title="TikTok">🎵</a>
+    <a href="#" title="WhatsApp">💬</a>
+    <a href="#" title="YouTube">📺</a>
+    <a href="#" title="X (Twitter)">✖️</a>
+  </div>
+
+  <div class="footer">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <script>
+    const translations = {
+      en: {
+        title: "One euro. One choice. A better life.",
+        subtitle: `A better world begins with a small act.  
+Donate 1 euro and support an idea that can unite, heal, and inspire.  
+Every contribution says: "I care."  
+And you're not alone.`,
+        thank: "Thank you for your support! ❤️"
+      },
+      es: {
+        title: "Un euro. Una elección. Una vida mejor.",
+        subtitle: `Un mundo mejor empieza con un pequeño gesto.  
+Dona 1 euro y apoya una idea que puede unir, sanar e inspirar.  
+Cada contribución dice: "Me importa".  
+Y no estás solo.`,
+        thank: "¡Gracias por tu apoyo! ❤️"
+      },
+      ar: {
+        title: "يورو واحد. خيار واحد. حياة أفضل.",
+        subtitle: `عالم أفضل يبدأ بفعل صغير.  
+تبرع بيورو واحد وادعم فكرة يمكن أن توحد وتلهم وتشفي.  
+كل مساهمة تعني: "أنا أهتم".  
+وأنت لست وحدك.`,
+        thank: "شكرًا لدعمك! ❤️"
+      },
+      zh: {
+        title: "一欧元，一个选择，更好的生活。",
+        subtitle: `更好的世界始于一个小小的行动。  
+捐赠1欧元，支持一个可以团结、治愈和启发的理念。  
+每一份捐助都在说：“我在乎。”  
+你并不孤单。`,
+        thank: "感谢您的支持！❤️"
+      },
+      ru: {
+        title: "Один евро. Один выбор. Лучшая жизнь.",
+        subtitle: `Лучший мир начинается с маленького поступка.  
+Пожертвуй 1 евро и поддержи идею, способную объединить, вдохновить и исцелить.  
+Каждое пожертвование говорит: «Мне не всё равно».  
+И ты не один.`,
+        thank: "Спасибо за вашу поддержку! ❤️"
+      }
+    };
+
+    function setLang(lang) {
+      const t = translations[lang];
+      if (t) {
+        document.getElementById("title").innerText = t.title;
+        document.getElementById("subtitle").innerText = t.subtitle;
+        document.getElementById("thankYou").innerText = t.thank;
+      }
+    }
+
+    function detectLang() {
+      const userLang = navigator.language || navigator.userLanguage;
+      const short = userLang.split("-")[0];
+      if (translations[short]) {
+        setLang(short);
+      }
+    }
+
+    function showThankYou() {
+      document.getElementById("thankYou").style.display = "block";
+    }
+
+    window.onload = detectLang;
+  </script>
 </body>
 </html>
