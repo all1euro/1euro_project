@@ -2,205 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>1 Euro Project</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      background: lightblue;
       color: #111;
       text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    .lang-selector {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-    }
-
-    .lang-selector button {
-      background: none;
-      border: none;
-      font-size: 1.2rem;
-      cursor: pointer;
-      margin: 0 5px;
-    }
-
-    .euro-symbol {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+      padding: 40px;
     }
 
     h1 {
-      font-size: 2.2rem;
-      margin: 1rem 0 0.5rem;
+      font-size: 2.5em;
+      font-weight: bold;
     }
 
     p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 2rem;
+      font-size: 1.2em;
+      font-family: 'Georgia', serif;
+      margin-bottom: 30px;
     }
 
-    .donate-button {
-      background-color: #000;
-      color: #fff;
-      padding: 14px 28px;
-      font-size: 1.1rem;
+    button {
+      background-color: mediumvioletred;
+      color: white;
+      font-size: 1.1em;
+      padding: 12px 24px;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .donate-button:hover {
-      box-shadow: 0 0 10px #000;
-      transform: scale(1.05);
-    }
-
-    .thank-you {
-      margin-top: 1.5rem;
-      font-weight: bold;
-      display: none;
     }
 
     .social-icons {
-      margin-top: 3rem;
+      margin-top: 30px;
     }
 
-    .social-icons a {
-      margin: 0 10px;
-      display: inline-block;
-      font-size: 1.2rem;
-      text-decoration: none;
+    .social-icons img {
+      width: 40px;
+      height: 40px;
+      margin: 8px;
+      cursor: pointer;
     }
 
-    .footer {
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      color: #777;
+    .flag-select {
+      margin-top: 40px;
     }
 
-    .footer a {
-      color: #555;
-      text-decoration: none;
-      margin: 0 10px;
+    .flag-select img {
+      width: 32px;
+      margin: 0 8px;
+      cursor: pointer;
     }
 
-    .footer a:hover {
-      text-decoration: underline;
+    .euro-image {
+      width: 80px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <div class="lang-selector">
-    <button onclick="setLang('en')">🇬🇧</button>
-    <button onclick="setLang('es')">🇪🇸</button>
-    <button onclick="setLang('ar')">🇸🇦</button>
-    <button onclick="setLang('zh')">🇨🇳</button>
-    <button onclick="setLang('ru')">🇷🇺</button>
-  </div>
 
-  <div class="euro-symbol">💶</div>
-  <h1 id="title">One euro. One choice. A better life.</h1>
-  <p id="subtitle">
-    A better world begins with a small act.  
-    Donate 1 euro and support an idea that can unite, heal, and inspire.  
-    Every contribution says: "I care."  
-    And you're not alone.
-  </p>
+  <img src="euro-145386_1280.png" alt="1 Euro" class="euro-image" />
 
-  <button class="donate-button" onclick="showThankYou()">
-    Donate 1 Euro
-  </button>
-
-  <div class="thank-you" id="thankYou">Thank you for your support! ❤️</div>
+  <h1>Un euro. O alegere. O viață mai bună!</h1>
+  <p>Donează 1 euro și spune mai departe. Poți face diferența!</p>
+  
+  <button onclick="alert('Îți mulțumim pentru donație!')">Donează 1 Euro</button>
 
   <div class="social-icons">
-    <p>Share the idea:</p>
-    <a href="#" title="Facebook">📘</a>
-    <a href="#" title="Instagram">📸</a>
-    <a href="#" title="TikTok">🎵</a>
-    <a href="#" title="WhatsApp">💬</a>
-    <a href="#" title="YouTube">📺</a>
-    <a href="#" title="X (Twitter)">✖️</a>
+    <img src="vecteezy_facebook-logo-facebook-logo-circle-facebook-logo-circular_55210893.png" alt="Facebook">
+    <img src="Round Instagram Logo Photos Social Media.jpg" alt="Instagram">
+    <img src="Je n'ai pas tik tok car j'ai 9ans mais plus tard dans ma vie je l'instalerais _).jpg" alt="TikTok">
+    <img src="Download.jpg" alt="YouTube">
   </div>
 
-  <div class="footer">
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms</a>
-    <a href="#">Contact</a>
+  <div class="flag-select">
+    <p>Selectează limba:</p>
+    <img src="https://flagcdn.com/40x30/gb.png" alt="English" onclick="setLang('en')">
+    <img src="https://flagcdn.com/40x30/de.png" alt="Deutsch" onclick="setLang('de')">
+    <img src="https://flagcdn.com/40x30/es.png" alt="Español" onclick="setLang('es')">
+    <img src="https://flagcdn.com/40x30/ru.png" alt="Русский" onclick="setLang('ru')">
+    <img src="https://flagcdn.com/40x30/ar.png" alt="العربية" onclick="setLang('ar')">
+    <img src="https://flagcdn.com/40x30/cn.png" alt="中文" onclick="setLang('zh')">
   </div>
 
   <script>
-    const translations = {
-      en: {
-        title: "One euro. One choice. A better life.",
-        subtitle: `A better world begins with a small act.  
-Donate 1 euro and support an idea that can unite, heal, and inspire.  
-Every contribution says: "I care."  
-And you're not alone.`,
-        thank: "Thank you for your support! ❤️"
-      },
-      es: {
-        title: "Un euro. Una elección. Una vida mejor.",
-        subtitle: `Un mundo mejor empieza con un pequeño gesto.  
-Dona 1 euro y apoya una idea que puede unir, sanar e inspirar.  
-Cada contribución dice: "Me importa".  
-Y no estás solo.`,
-        thank: "¡Gracias por tu apoyo! ❤️"
-      },
-      ar: {
-        title: "يورو واحد. خيار واحد. حياة أفضل.",
-        subtitle: `عالم أفضل يبدأ بفعل صغير.  
-تبرع بيورو واحد وادعم فكرة يمكن أن توحد وتلهم وتشفي.  
-كل مساهمة تعني: "أنا أهتم".  
-وأنت لست وحدك.`,
-        thank: "شكرًا لدعمك! ❤️"
-      },
-      zh: {
-        title: "一欧元，一个选择，更好的生活。",
-        subtitle: `更好的世界始于一个小小的行动。  
-捐赠1欧元，支持一个可以团结、治愈和启发的理念。  
-每一份捐助都在说：“我在乎。”  
-你并不孤单。`,
-        thank: "感谢您的支持！❤️"
-      },
-      ru: {
-        title: "Один евро. Один выбор. Лучшая жизнь.",
-        subtitle: `Лучший мир начинается с маленького поступка.  
-Пожертвуй 1 евро и поддержи идею, способную объединить, вдохновить и исцелить.  
-Каждое пожертвование говорит: «Мне не всё равно».  
-И ты не один.`,
-        thank: "Спасибо за вашу поддержку! ❤️"
-      }
-    };
-
     function setLang(lang) {
-      const t = translations[lang];
-      if (t) {
-        document.getElementById("title").innerText = t.title;
-        document.getElementById("subtitle").innerText = t.subtitle;
-        document.getElementById("thankYou").innerText = t.thank;
-      }
+      alert("Limba selectată: " + lang + " (funcționalitate în dezvoltare)");
+      // Aici în viitor se vor schimba textele automat.
     }
 
-    function detectLang() {
+    // Detectarea automată a limbii browserului
+    window.onload = function() {
       const userLang = navigator.language || navigator.userLanguage;
-      const short = userLang.split("-")[0];
-      if (translations[short]) {
-        setLang(short);
-      }
+      console.log("Browser language detected:", userLang);
+      // Aici se va implementa auto-redirect sau auto-traducere
     }
-
-    function showThankYou() {
-      document.getElementById("thankYou").style.display = "block";
-    }
-
-    window.onload = detectLang;
   </script>
+
 </body>
 </html>
