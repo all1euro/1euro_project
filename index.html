@@ -21,7 +21,7 @@
 
     p {
       font-size: 1.2em;
-      font-family: 'Georgia', serif;
+      font-family: 'Georgia', arial , cursiv;
       margin-bottom: 30px;
       white-space: pre-line;
     }
@@ -58,8 +58,8 @@
     }
 
     .euro-image {
-      width: 100px;
-      margin-bottom: 40px;
+      width: 120px;
+      margin-bottom: 50px;
     }
   </style>
 </head>
@@ -85,7 +85,7 @@
   </div>
 
   <div class="flag-select">
-    <p>Selectează limba:</p>
+    <p id="language-label">Selectează limba:</p>
     <img src="https://flagcdn.com/40x30/gb.png" alt="English" onclick="setLang('en')">
     <img src="https://flagcdn.com/40x30/de.png" alt="Deutsch" onclick="setLang('de')">
     <img src="https://flagcdn.com/40x30/es.png" alt="Español" onclick="setLang('es')">
@@ -98,27 +98,38 @@
     const translations = {
       en: {
         title: "One euro. One choice. A better life!",
-        subtitle: "A better world begins with a small act.\nDonate 1 euro and support an idea that can unite, heal, and inspire.\nEvery contribution says: 'I care.'\nAnd you're not alone."
+        subtitle: "A better world begins with a small act.\nDonate 1 euro and support an idea that can unite, heal, and inspire.\nEvery contribution says: 'I care.'\nAnd you're not alone.",
+        languageLabel: "Select language:"
       },
       de: {
         title: "Ein Euro. Eine Entscheidung. Ein besseres Leben!",
-        subtitle: "Eine bessere Welt beginnt mit einer kleinen Geste.\nSpende 1 Euro und unterstütze eine Idee, die vereinen, heilen und inspirieren kann.\nJeder Beitrag sagt: 'Es ist mir wichtig.'\nUnd du bist nicht allein."
+        subtitle: "Eine bessere Welt beginnt mit einer kleinen Geste.\nSpende 1 Euro und unterstütze eine Idee, die vereinen, heilen und inspirieren kann.\nJeder Beitrag sagt: 'Es ist mir wichtig.'\nUnd du bist nicht allein.",
+        languageLabel: "Sprache auswählen:"
       },
       es: {
         title: "Un euro. Una elección. Una vida mejor!",
-        subtitle: "Un mundo mejor comienza con un pequeño gesto.\nDona 1 euro y apoya una idea que puede unir, sanar e inspirar.\nCada contribución dice: 'Me importa.'\nY no estás solo."
+        subtitle: "Un mundo mejor comienza con un pequeño gesto.\nDona 1 euro y apoya una idea que puede unir, sanar e inspirar.\nCada contribución dice: 'Me importa.'\nY no estás solo.",
+        languageLabel: "Selecciona idioma:"
       },
       ru: {
         title: "Один евро. Один выбор. Лучшая жизнь!",
-        subtitle: "Лучший мир начинается с маленького поступка.\nПожертвуй 1 евро и поддержи идею, способную объединить, исцелить и вдохновить.\nКаждое пожертвование говорит: 'Мне не всё равно.'\nИ ты не один."
+        subtitle: "Лучший мир начинается с маленького поступка.\nПожертвуй 1 евро и поддержи идею, способную объединить, исцелить и вдохновить.\nКаждое пожертвование говорит: 'Мне не всё равно.'\nИ ты не один.",
+        languageLabel: "Выберите язык:"
       },
       ar: {
         title: "يورو واحد. خيار واحد. حياة أفضل!",
-        subtitle: "عالم أفضل يبدأ بفعل صغير.\nتبرع بيورو واحد وادعم فكرة يمكن أن توحد وتلهم وتشفي.\nكل مساهمة تعني: 'أنا أهتم.'\nوأنت لست وحدك."
+        subtitle: "عالم أفضل يبدأ بفعل صغير.\nتبرع بيورو واحد وادعم فكرة يمكن أن توحد وتلهم وتشفي.\nكل مساهمة تعني: 'أنا أهتم.'\nوأنت لست وحدك.",
+        languageLabel: "اختر اللغة:"
       },
       zh: {
         title: "一欧元。一个选择。更好的生活！",
-        subtitle: "更好的世界始于一个小小的行动。\n捐赠1欧元，支持一个可以团结、治愈和启发的理念。\n每一份捐助都在说：‘我在乎。’\n你并不孤单。"
+        subtitle: "更好的世界始于一个小小的行动。\n捐赠1欧元，支持一个可以团结、治愈和启发的理念。\n每一份捐助都在说：‘我在乎。’\n你并不孤单。",
+        languageLabel: "选择语言："
+      },
+      ro: {
+        title: "Un euro. O alegere. O viață mai bună!",
+        subtitle: "O lume mai bună începe cu un gest mic.\nDonează 1 euro și susține o idee care poate uni, vindeca și inspira.\nFiecare contribuție spune: „Îmi pasă.”\nȘi nu ești singur.",
+        languageLabel: "Selectează limba:"
       }
     };
 
@@ -126,6 +137,7 @@
       if (translations[lang]) {
         document.getElementById("title").innerText = translations[lang].title;
         document.getElementById("subtitle").innerText = translations[lang].subtitle;
+        document.getElementById("language-label").innerText = translations[lang].languageLabel;
       }
     }
 
@@ -134,6 +146,8 @@
       const shortLang = userLang.split('-')[0];
       if (translations[shortLang]) {
         setLang(shortLang);
+      } else {
+        setLang('ro'); // fallback default to Romanian
       }
     }
   </script>
