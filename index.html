@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>1 Euro Project</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: lightblue;
       color: #111;
       text-align: center;
@@ -22,10 +23,11 @@
       font-size: 1.2em;
       font-family: 'Georgia', serif;
       margin-bottom: 30px;
+      white-space: pre-line;
     }
 
     button {
-      background-color: mediumvioletred;
+      background-color: red;
       color: white;
       font-size: 1.1em;
       padding: 12px 24px;
@@ -65,9 +67,14 @@
 
   <img src="euro-145386_1280.png" alt="1 Euro" class="euro-image" />
 
-  <h1>Un euro. O alegere. O viață mai bună!</h1>
-  <p>Donează 1 euro și spune mai departe. Poți face diferența!</p>
-  
+  <h1 id="title">Un euro. O alegere. O viață mai bună!</h1>
+  <p id="subtitle">
+    O lume mai bună începe cu un gest mic.
+    Donează 1 euro și susține o idee care poate uni, vindeca și inspira.
+    Fiecare contribuție spune: „Îmi pasă.”
+    Și nu ești singur.
+  </p>
+
   <button onclick="alert('Îți mulțumim pentru donație!')">Donează 1 Euro</button>
 
   <div class="social-icons">
@@ -88,18 +95,47 @@
   </div>
 
   <script>
+    const translations = {
+      en: {
+        title: "One euro. One choice. A better life!",
+        subtitle: "A better world begins with a small act.\nDonate 1 euro and support an idea that can unite, heal, and inspire.\nEvery contribution says: 'I care.'\nAnd you're not alone."
+      },
+      de: {
+        title: "Ein Euro. Eine Entscheidung. Ein besseres Leben!",
+        subtitle: "Eine bessere Welt beginnt mit einer kleinen Geste.\nSpende 1 Euro und unterstütze eine Idee, die vereinen, heilen und inspirieren kann.\nJeder Beitrag sagt: 'Es ist mir wichtig.'\nUnd du bist nicht allein."
+      },
+      es: {
+        title: "Un euro. Una elección. Una vida mejor!",
+        subtitle: "Un mundo mejor comienza con un pequeño gesto.\nDona 1 euro y apoya una idea que puede unir, sanar e inspirar.\nCada contribución dice: 'Me importa.'\nY no estás solo."
+      },
+      ru: {
+        title: "Один евро. Один выбор. Лучшая жизнь!",
+        subtitle: "Лучший мир начинается с маленького поступка.\nПожертвуй 1 евро и поддержи идею, способную объединить, исцелить и вдохновить.\nКаждое пожертвование говорит: 'Мне не всё равно.'\nИ ты не один."
+      },
+      ar: {
+        title: "يورو واحد. خيار واحد. حياة أفضل!",
+        subtitle: "عالم أفضل يبدأ بفعل صغير.\nتبرع بيورو واحد وادعم فكرة يمكن أن توحد وتلهم وتشفي.\nكل مساهمة تعني: 'أنا أهتم.'\nوأنت لست وحدك."
+      },
+      zh: {
+        title: "一欧元。一个选择。更好的生活！",
+        subtitle: "更好的世界始于一个小小的行动。\n捐赠1欧元，支持一个可以团结、治愈和启发的理念。\n每一份捐助都在说：‘我在乎。’\n你并不孤单。"
+      }
+    };
+
     function setLang(lang) {
-      alert("Limba selectată: " + lang + " (funcționalitate în dezvoltare)");
-      // Aici în viitor se vor schimba textele automat.
+      if (translations[lang]) {
+        document.getElementById("title").innerText = translations[lang].title;
+        document.getElementById("subtitle").innerText = translations[lang].subtitle;
+      }
     }
 
-    // Detectarea automată a limbii browserului
     window.onload = function() {
       const userLang = navigator.language || navigator.userLanguage;
-      console.log("Browser language detected:", userLang);
-      // Aici se va implementa auto-redirect sau auto-traducere
+      const shortLang = userLang.split('-')[0];
+      if (translations[shortLang]) {
+        setLang(shortLang);
+      }
     }
   </script>
-
 </body>
 </html>
