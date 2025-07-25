@@ -21,7 +21,7 @@
 
     p {
       font-size: 1.2em;
-      font-family: 'Georgia', arial , cursiv;
+      font-family: 'Georgia', serif;
       margin-bottom: 30px;
       white-space: pre-line;
     }
@@ -59,7 +59,25 @@
 
     .euro-image {
       width: 120px;
-      margin-bottom: 50px;
+      height: 50px;
+      margin-bottom: 20px;
+    }
+
+    .donation-options {
+      margin-top: 20px;
+      display: none;
+    }
+
+    .donation-options a {
+      display: block;
+      margin: 6px 0;
+      color: #111;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .donation-options a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -75,7 +93,14 @@
     Și nu ești singur.
   </p>
 
-  <button onclick="alert('Îți mulțumim pentru donație!')">Donează 1 Euro</button>
+  <button onclick="toggleDonations()">Donează 1 Euro</button>
+
+  <div class="donation-options" id="donation-options">
+    <a href="https://www.paypal.me/EDaistan" target="_blank">PayPal</a>
+    <a href="https://revolut.me/e_daistan" target="_blank">Revolut</a>
+    <a href="https://www.buymeacoffee.com/all1euro" target="_blank">Buy Me a Coffee</a>
+    <a href="#" target="_blank">Card bancar (în curând)</a>
+  </div>
 
   <div class="social-icons">
     <img src="vecteezy_facebook-logo-facebook-logo-circle-facebook-logo-circular_55210893.png" alt="Facebook">
@@ -141,13 +166,18 @@
       }
     }
 
+    function toggleDonations() {
+      const box = document.getElementById("donation-options");
+      box.style.display = box.style.display === "none" ? "block" : "none";
+    }
+
     window.onload = function() {
       const userLang = navigator.language || navigator.userLanguage;
       const shortLang = userLang.split('-')[0];
       if (translations[shortLang]) {
         setLang(shortLang);
       } else {
-        setLang('ro'); // fallback default to Romanian
+        setLang('ro');
       }
     }
   </script>
