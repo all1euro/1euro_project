@@ -368,22 +368,31 @@ O viață mai bună!
       }
     };
 
-    function setLang(lang) {
+  function setLang(lang) {
   if (translations[lang]) {
-    document.getElementById("title").innerText = translations[lang].title;
-    document.getElementById("subtitle").innerText = translations[lang].subtitle;
-    document.getElementById("language-label").innerText = translations[lang].languageLabel;
+
+    document.getElementById("title").innerText =
+      translations[lang].title;
+
+    document.getElementById("subtitle").innerText =
+      translations[lang].subtitle;
+
+    document.getElementById("language-label").innerText =
+      translations[lang].languageLabel;
 
     if (document.getElementById("cardBtn")) {
-      document.getElementById("cardBtn").innerText = translations[lang].card;
+      document.getElementById("cardBtn").innerText =
+        translations[lang].card;
     }
 
     if (document.getElementById("paypalBtn")) {
-      document.getElementById("paypalBtn").innerText = translations[lang].paypal;
+      document.getElementById("paypalBtn").innerText =
+        translations[lang].paypal;
     }
 
     if (document.getElementById("revolutBtn")) {
-      document.getElementById("revolutBtn").innerText = translations[lang].revolut;
+      document.getElementById("revolutBtn").innerText =
+        translations[lang].revolut;
     }
   }
 }
