@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>1 Euro Project</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 34px;
+    color: #222;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.15);
+    color: #d4a017;
+}
+
+.donate-button {
+    display: inline-block;
+    background: linear-gradient(135deg,#d4a017,#f0c14b);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.donate-button:hover {
+    transform: translateY(-2px);
+}
     body {
       font-family: 'Poppins', sans-serif;
       background: lightblue;
@@ -93,31 +130,33 @@
     Și nu ești singur.
   </p>
 
-  <button onclick="toggleDonations()">Donează 1 Euro</button>
+  <a href="https://buy.stripe.com/5kQfZgeEG61d4Vy12scwg00" target="_blank" class="donate-button">
+    Donează 1 Euro
+</a>
 
-  <div class="donation-options" id="donation-options">
+ <div class="donation-options" id="donation-options">
     <a href="https://www.paypal.me/EDaistan" target="_blank">PayPal</a>
     <a href="https://revolut.me/e_daistan" target="_blank">Revolut</a>
     <a href="https://www.buymeacoffee.com/all1euro" target="_blank">Buy Me a Coffee</a>
     <a href="#" target="_blank">Card bancar (în curând)</a>
   </div>
 
-  <div class="social-icons">
+ <div class="social-icons">
 
-<a href="https://www.facebook.com/profile.php?id=61578039856553" target="_blank">
-    <img src="vecteezy_facebook-logo-facebook-logo-circle-facebook-logo-circular_55210893.png" alt="Facebook">
+<a href="LINK_FACEBOOK" target="_blank">
+<i class="fab fa-facebook"></i>
 </a>
 
-<a href="https://www.instagram.com/all1eurotogether/" target="_blank">
-    <img src="Round Instagram Logo Photos Social Media.jpg" alt="Instagram">
+<a href="LINK_INSTAGRAM" target="_blank">
+<i class="fab fa-instagram"></i>
 </a>
 
-<a href="https://www.tiktok.com/@all1euro" target="_blank">
-    <img src="Je n'ai pas tik tok car j'ai 9ans mais plus tard dans ma vie je l'instalerais _).jpg" alt="TikTok">
+<a href="LINK_TIKTOK" target="_blank">
+<i class="fab fa-tiktok"></i>
 </a>
 
-<a href="https://www.youtube.com/@All1euro.project" target="_blank">
-    <img src="Download.jpg" alt="YouTube">
+<a href="LINK_YOUTUBE" target="_blank">
+<i class="fab fa-youtube"></i>
 </a>
 
 </div>
