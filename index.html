@@ -44,24 +44,31 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     transform: translateY(-2px);
 }
     body {
-      font-family: 'Poppins', sans-serif;
-      background: lightblue;
-      color: #111;
-      text-align: center;
-      padding: 40px;
-    }
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #eef7f5, #f7f7f2);
+    color: #0d2b2b;
+    text-align: center;
+    overflow-x: hidden;
+}
 
     h1 {
-      font-size: 2.5em;
-      font-weight: bold;
-    }
+    font-size: 68px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #0b2f2f;
+}
 
     p {
-      font-size: 1.2em;
-      font-family: 'Georgia', serif;
-      margin-bottom: 30px;
-      white-space: pre-line;
-    }
+    font-size: 22px;
+    line-height: 1.8;
+    color: #3d4b4b;
+    max-width: 900px;
+    margin: auto;
+}
 
     button {
       background-color: red;
@@ -116,6 +123,57 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     .donation-options a:hover {
       text-decoration: underline;
     }
+    .hero {
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+.euro-image {
+    width: 130px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
+}
+
+.language-selector img {
+    width: 34px;
+    margin: 8px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.language-selector img:hover {
+    transform: scale(1.12);
+}
+
+.bottom-section {
+    margin-top: 100px;
+    background: linear-gradient(135deg,#062f2f,#0a4747);
+    color: white;
+    padding: 80px 30px;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    max-width: 280px;
+}
+
+.card h3 {
+    font-size: 34px;
+    margin-bottom: 20px;
+    color: #f0c14b;
+}
+
+.card p {
+    color: #d7d7d7;
+    font-size: 18px;
+}
   </style>
 </head>
 <body>
