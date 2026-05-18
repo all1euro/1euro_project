@@ -9,6 +9,41 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
+
+.payment-methods {
+    display: none;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.payment-methods.show {
+    display: flex;
+}
+
+.pay-icon {
+    width: 92px;
+    padding: 10px 8px;
+    border-radius: 14px;
+    background: #ffffff;
+    color: #0b2f2f;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    font-weight: 700;
+    font-size: 14px;
+    transition: 0.25s;
+}
+
+.pay-icon i {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.pay-icon:hover {
+    transform: translateY(-2px);
+}
+
     .social-icons {
     display: flex;
     justify-content: center;
@@ -216,30 +251,25 @@ O viață mai bună!
     Și nu ești singur.
   </p>
 
-  <a href="https://buy.stripe.com/5kQfZgeEG61d4Vy12scwg00" target="_blank" class="donate-button">
-    Donează 1 Euro
+  <a href="javascript:void(0)" onclick="togglePayments()" class="donate-button">
+  Donează 1 Euro
 </a>
 
- <<div class="payment-methods">
-
-  <a href="https://buy.stripe.com/5kQfZgeEG61d4Vy12scwg00"
-     target="_blank"
-     class="pay-btn stripe-btn">
-    💳 Card
+ <div class="payment-methods" id="paymentMethods">
+  <a href="https://www.paypal.com/pool/9phPSUj1Oe?sr=accr" target="_blank" class="pay-icon paypal-btn">
+    <i class="fab fa-paypal"></i>
+    <span>PayPal</span>
   </a>
 
-  <a href="https://www.paypal.com/pool/9phPSUj1Oe?sr=accr"
-     target="_blank"
-     class="pay-btn paypal-btn">
-    PayPal
+  <a href="https://revolut.me/all1euro?currency=EUR&amount=100" target="_blank" class="pay-icon revolut-btn">
+    <i class="fas fa-bold"></i>
+    <span>Revolut</span>
   </a>
 
-  <a href="https://revolut.me/all1euro?currency=EUR&amount=100"
-     target="_blank"
-     class="pay-btn revolut-btn">
-    Revolut
+  <a href="https://buy.stripe.com/5kQfZgeEG61d4Vy12scwg00" target="_blank" class="pay-icon card-btn">
+    <i class="far fa-credit-card"></i>
+    <span>Card</span>
   </a>
-
 </div>
 
  <div class="social-icons">
@@ -367,4 +397,12 @@ O viață mai bună!
   
 </div>
 </body>
+<script>
+function togglePayments() {
+  document.getElementById("paymentMethods").classList.toggle("show");
+}
+</script>
+
+</body>
 </html>
+
