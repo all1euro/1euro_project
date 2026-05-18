@@ -256,20 +256,26 @@ O viață mai bună!
 </a>
 
  <div class="payment-methods" id="paymentMethods">
-  <a href="https://www.paypal.com/pool/9phPSUj1Oe?sr=accr" target="_blank" class="pay-icon paypal-btn">
-    <i class="fab fa-paypal"></i>
-    <span>PayPal</span>
-  </a>
+  <a href="https://www.paypal.com/pool/9phPSUj1Oe?sr=accr"
+   target="_blank"
+   class="pay-icon paypal-btn"
+   id="paypalBtn">
+   PayPal
+</a>
 
-  <a href="https://revolut.me/all1euro?currency=EUR&amount=100" target="_blank" class="pay-icon revolut-btn">
-    <i class="fas fa-bold"></i>
-    <span>Revolut</span>
-  </a>
+<a href="https://revolut.me/all1euro?currency=EUR&amount=100"
+   target="_blank"
+   class="pay-icon revolut-btn"
+   id="revolutBtn">
+   Revolut
+</a>
 
-  <a href="https://buy.stripe.com/5kQfZgeEG61d4Vy12scwg00" target="_blank" class="pay-icon card-btn">
-    <i class="far fa-credit-card"></i>
-    <span>Card</span>
-  </a>
+<a href="https://buy.stripe.com/5kQfZgeEG61d4Vy12scwg00"
+   target="_blank"
+   class="pay-icon stripe-btn"
+   id="cardBtn">
+   Card
+</a>
 </div>
 
  <div class="social-icons">
@@ -307,37 +313,58 @@ O viață mai bună!
       en: {
         title: "One euro. One choice. A better life!",
         subtitle: "A better world begins with a small act.\nDonate 1 euro and support an idea that can unite, heal, and inspire.\nEvery contribution says: 'I care.'\nAnd you're not alone.",
-        languageLabel: "Select language:"
+        languageLabel: "Select language:" 
+        card: "Card",
+        paypal: "PayPal",
+        revolut: "Revolut",
       },
       de: {
         title: "Ein Euro. Eine Entscheidung. Ein besseres Leben!",
         subtitle: "Eine bessere Welt beginnt mit einer kleinen Geste.\nSpende 1 Euro und unterstütze eine Idee, die vereinen, heilen und inspirieren kann.\nJeder Beitrag sagt: 'Es ist mir wichtig.'\nUnd du bist nicht allein.",
         languageLabel: "Sprache auswählen:"
+        card: "Karte",
+        paypal: "PayPal",
+        revolut: "Revolut",
       },
       es: {
         title: "Un euro. Una elección. Una vida mejor!",
         subtitle: "Un mundo mejor comienza con un pequeño gesto.\nDona 1 euro y apoya una idea que puede unir, sanar e inspirar.\nCada contribución dice: 'Me importa.'\nY no estás solo.",
         languageLabel: "Selecciona idioma:"
+        card: "Card",
+        paypal: "PayPal",
+        revolut: "Revolut",
       },
       ru: {
         title: "Один евро. Один выбор. Лучшая жизнь!",
         subtitle: "Лучший мир начинается с маленького поступка.\nПожертвуй 1 евро и поддержи идею, способную объединить, исцелить и вдохновить.\nКаждое пожертвование говорит: 'Мне не всё равно.'\nИ ты не один.",
         languageLabel: "Выберите язык:"
+        card: "Карта",
+        paypal: "PayPal",
+        revolut: "Revolut",
       },
       ar: {
         title: "يورو واحد. خيار واحد. حياة أفضل!",
         subtitle: "عالم أفضل يبدأ بفعل صغير.\nتبرع بيورو واحد وادعم فكرة يمكن أن توحد وتلهم وتشفي.\nكل مساهمة تعني: 'أنا أهتم.'\nوأنت لست وحدك.",
         languageLabel: "اختر اللغة:"
+        card: "بطاقة",
+        paypal: "باي بال",
+        revolut: "ريفولوت",
       },
       zh: {
         title: "一欧元。一个选择。更好的生活！",
         subtitle: "更好的世界始于一个小小的行动。\n捐赠1欧元，支持一个可以团结、治愈和启发的理念。\n每一份捐助都在说：‘我在乎。’\n你并不孤单。",
         languageLabel: "选择语言："
+        card: "银行卡",
+        paypal: "PayPal",
+        revolut: "Revolut",
       },
       ro: {
         title: "Un euro. O alegere. O viață mai bună!",
         subtitle: "O lume mai bună începe cu un gest mic.\nDonează 1 euro și susține o idee care poate uni, vindeca și inspira.\nFiecare contribuție spune: „Îmi pasă.”\nȘi nu ești singur.",
         languageLabel: "Selectează limba:"
+        card: "Card",
+        paypal: "PayPal",
+        revolut: "Revolut",
       }
     };
 
@@ -346,6 +373,9 @@ O viață mai bună!
         document.getElementById("title").innerText = translations[lang].title;
         document.getElementById("subtitle").innerText = translations[lang].subtitle;
         document.getElementById("language-label").innerText = translations[lang].languageLabel;
+        document.getElementById("cardBtn").innerText = translations[lang].card;
+        document.getElementById("paypalBtn").innerText = translations[lang].paypal;
+        document.getElementById("revolutBtn").innerText = translations[lang].revolut;
       }
     }
 
