@@ -369,17 +369,25 @@ O viață mai bună!
     };
 
     function setLang(lang) {
-      if (translations[lang]) {
-        document.getElementById("title").innerText = translations[lang].title;
-        document.getElementById("subtitle").innerText = translations[lang].subtitle;
-        document.getElementById("language-label").innerText = translations[lang].languageLabel;
-        document.getElementById("cardBtn").innerText = translations[lang].card;
-        document.getElementById("paypalBtn").innerText = translations[lang].paypal;
-        document.getElementById("revolutBtn").innerText = translations[lang].revolut;
-      }
+  if (translations[lang]) {
+    document.getElementById("title").innerText = translations[lang].title;
+    document.getElementById("subtitle").innerText = translations[lang].subtitle;
+    document.getElementById("language-label").innerText = translations[lang].languageLabel;
+
+    if (document.getElementById("cardBtn")) {
+      document.getElementById("cardBtn").innerText = translations[lang].card;
     }
 
-    function toggleDonations() {
+    if (document.getElementById("paypalBtn")) {
+      document.getElementById("paypalBtn").innerText = translations[lang].paypal;
+    }
+
+    if (document.getElementById("revolutBtn")) {
+      document.getElementById("revolutBtn").innerText = translations[lang].revolut;
+    }
+  }
+}
+      function toggleDonations() {
       const box = document.getElementById("donation-options");
       box.style.display = box.style.display === "none" ? "block" : "none";
     }
