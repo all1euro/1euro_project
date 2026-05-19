@@ -1,455 +1,463 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
-  <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>1 Euro Project</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
-
-.payment-methods {
-    display: none;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 14px;
-}
-
-.payment-methods.show {
-    display: flex;
-}
-
-.pay-icon {
-    width: 92px;
-    padding: 10px 8px;
-    border-radius: 14px;
-    background: #ffffff;
-    color: #0b2f2f;
-    text-decoration: none;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    font-weight: 700;
-    font-size: 14px;
-    transition: 0.25s;
-}
-
-.pay-icon i {
-    display: block;
-    font-size: 24px;
-    margin-bottom: 5px;
-}
-
-.pay-icon:hover {
-    transform: translateY(-2px);
-}
-
-    .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.social-icons a {
-    text-decoration: none;
-    font-size: 34px;
-    color: #222;
-    transition: 0.3s;
-}
-
-.social-icons a:hover {
-    transform: scale(1.15);
-    color: #d4a017;
-}
-
-.donate-button {
-    display: inline-block;
-    background: linear-gradient(135deg,#d4a017,#f0c14b);
-    color: white;
-    padding: 14px 32px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    transition: 0.3s;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.donate-button:hover {
-    transform: translateY(-2px);
-}
     body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #eef7f5, #f7f7f2);
-    color: #0d2b2b;
-    text-align: center;
-    overflow-x: hidden;
-}
-
-   h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 78px;
-    line-height: 1.05;
-    font-weight: 700;
-    color: #0b2f2f;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    letter-spacing: -1px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.08);
-}
-  h1 span {
-    color: #d4a017;
-}
-
-    p {
-    font-size: 22px;
-    line-height: 1.8;
-    color: #3d4b4b;
-    max-width: 900px;
-    margin: auto;
-}
-
-    button {
-      background-color: red;
-      color: white;
-      font-size: 1.1em;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .social-icons {
-      margin-top: 30px;
-    }
-
-    .social-icons img {
-      width: 40px;
-      height: 40px;
-      margin: 8px;
-      cursor: pointer;
-    }
-
-    .flag-select {
-      margin-top: 40px;
-    }
-
-    .flag-select img {
-      width: 32px;
-      margin: 0 8px;
-      cursor: pointer;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #eef7f5, #f7f7f2);
+      color: #0d2b2b;
+      text-align: center;
+      overflow-x: hidden;
     }
 
     .euro-image {
       width: 130px;
       height: 130px;
-      margin-bottom: 30px;
+      margin-top: 35px;
+      margin-bottom: 25px;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
     }
 
-    .donation-options {
-      margin-top: 20px;
-      display: none;
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 78px;
+      line-height: 1.05;
+      font-weight: 700;
+      color: #0b2f2f;
+      margin: 20px auto 30px;
+      letter-spacing: -1px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
 
-    .donation-options a {
-      display: block;
-      margin: 6px 0;
-      color: #111;
+    h1 span {
+      color: #d4a017;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.7;
+      color: #3d4b4b;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .donate-button {
+      display: inline-block;
+      background: linear-gradient(135deg,#d4a017,#f0c14b);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 12px;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 0.3s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      margin-top: 25px;
     }
 
-    .donation-options a:hover {
-      text-decoration: underline;
+    .donate-button:hover {
+      transform: translateY(-2px);
     }
-    .hero {
-    padding-top: 40px;
-    padding-bottom: 80px;
-}
 
-.euro-image {
-    width: 130px;
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
-}
+    .payment-methods {
+      display: none;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
 
-.language-selector img {
-    width: 34px;
-    margin: 8px;
-    border-radius: 8px;
-    transition: 0.3s;
-}
+    .payment-methods.show {
+      display: flex;
+    }
 
-.language-selector img:hover {
-    transform: scale(1.12);
-}
+    .pay-icon {
+      width: 92px;
+      padding: 10px 8px;
+      border-radius: 14px;
+      background: #ffffff;
+      color: #0b2f2f;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      font-weight: 700;
+      font-size: 14px;
+      transition: 0.25s;
+    }
 
-.bottom-section {
-    margin-top: 100px;
-    background: linear-gradient(135deg,#062f2f,#0a4747);
-    color: white;
-    padding: 80px 30px;
-    border-top-left-radius: 80px;
-    border-top-right-radius: 80px;
-}
+    .pay-icon i {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
 
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
+    .pay-icon:hover {
+      transform: translateY(-2px);
+    }
 
-.card {
-    max-width: 280px;
-}
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 28px;
+    }
 
-.card h3 {
-    font-size: 34px;
-    margin-bottom: 20px;
-    color: #f0c14b;
-}
+    .social-icons a {
+      text-decoration: none;
+      font-size: 32px;
+      color: #222;
+      transition: 0.3s;
+    }
 
-.card p {
-    color: #d7d7d7;
-    font-size: 18px;
-}
-.section-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 22px;
-    background: #f0c14b;
-    color: #062f2f;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: 0.3s;
-}
+    .social-icons a:hover {
+      transform: scale(1.15);
+      color: #d4a017;
+    }
 
-.section-button:hover {
-    transform: translateY(-2px);
-    background: #ffd96a;
-}
+    .flag-select {
+      margin-top: 35px;
+    }
+
+    .flag-select p {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .flag-select img {
+      width: 32px;
+      margin: 0 7px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .flag-select img:hover {
+      transform: scale(1.12);
+    }
+
+    .bottom-section {
+      margin-top: 90px;
+      background: linear-gradient(135deg,#062f2f,#0a4747);
+      color: white;
+      padding: 75px 30px;
+      border-top-left-radius: 80px;
+      border-top-right-radius: 80px;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      max-width: 300px;
+    }
+
+    .card h3 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #f0c14b;
+    }
+
+    .card p {
+      color: #d7d7d7;
+      font-size: 17px;
+    }
+
+    .section-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 22px;
+      background: #f0c14b;
+      color: #062f2f;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .section-button:hover {
+      transform: translateY(-2px);
+      background: #ffd96a;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 46px;
+      }
+
+      p {
+        font-size: 17px;
+        padding: 0 18px;
+      }
+
+      .pay-icon {
+        width: 82px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <img src="euro-145386_1280.png" alt="1 Euro" class="euro-image" />
 
-  <h1 id="title">
-Un <span>euro</span>.<br>
-O alegere.<br>
-O viață mai bună!
-</h1>
-  <p id="subtitle">
-    O lume mai bună începe cu un gest mic.
-    Donează 1 euro și susține o idee care poate uni, vindeca și inspira.
-    Fiecare contribuție spune: „Îmi pasă.”
-    Și nu ești singur.
-  </p>
+  <h1 id="title"></h1>
 
-  <a href="javascript:void(0)" onclick="togglePayments()" class="donate-button">
-  Donează 1 Euro
-</a>
+  <p id="subtitle"></p>
 
- <div class="payment-methods" id="paymentMethods">
-  <a href="https://www.paypal.com/pool/9phPSUj1Oe?sr=accr"
-   target="_blank"
-   class="pay-icon paypal-btn"
-   id="paypalBtn">
-   PayPal
-</a>
+  <a href="javascript:void(0)" onclick="togglePayments()" class="donate-button" id="donateBtn">
+    Donează 1 Euro
+  </a>
 
-<a href="https://revolut.me/all1euro?currency=EUR&amount=100"
-   target="_blank"
-   class="pay-icon revolut-btn"
-   id="revolutBtn">
-   Revolut
-</a>
+  <div class="payment-methods" id="paymentMethods">
+    <a href="https://www.paypal.com/pool/9phPSUj1Oe?sr=accr" target="_blank" class="pay-icon paypal-btn">
+      <i class="fab fa-paypal"></i>
+      <span id="paypalBtn">PayPal</span>
+    </a>
 
-<a href="https://buy.stripe.com/5kQfZgeEG61d4Vy12scwg00"
-   target="_blank"
-   class="pay-icon stripe-btn"
-   id="cardBtn">
-   Card
-</a>
-</div>
+    <a href="https://revolut.me/all1euro?currency=EUR&amount=100" target="_blank" class="pay-icon revolut-btn">
+      <i class="fas fa-bold"></i>
+      <span id="revolutBtn">Revolut</span>
+    </a>
 
- <div class="social-icons">
+    <a href="https://buy.stripe.com/5kQfZgeEG61d4Vy12scwg00" target="_blank" class="pay-icon stripe-btn">
+      <i class="far fa-credit-card"></i>
+      <span id="cardBtn">Card</span>
+    </a>
+  </div>
 
-<a href="LINK_FACEBOOK" target="_blank">
-<i class="fab fa-facebook"></i>
-</a>
-
-<a href="LINK_INSTAGRAM" target="_blank">
-<i class="fab fa-instagram"></i>
-</a>
-
-<a href="LINK_TIKTOK" target="_blank">
-<i class="fab fa-tiktok"></i>
-</a>
-
-<a href="LINK_YOUTUBE" target="_blank">
-<i class="fab fa-youtube"></i>
-</a>
-
-</div>
+  <div class="social-icons">
+    <a href="LINK_FACEBOOK" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="LINK_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="LINK_TIKTOK" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="LINK_YOUTUBE" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
 
   <div class="flag-select">
-    <p id="language-label">Selectează limba:</p>
+    <p id="language-label"></p>
+    <img src="https://flagcdn.com/40x30/ro.png" alt="Română" onclick="setLang('ro')">
     <img src="https://flagcdn.com/40x30/gb.png" alt="English" onclick="setLang('en')">
     <img src="https://flagcdn.com/40x30/de.png" alt="Deutsch" onclick="setLang('de')">
     <img src="https://flagcdn.com/40x30/es.png" alt="Español" onclick="setLang('es')">
     <img src="https://flagcdn.com/40x30/ru.png" alt="Русский" onclick="setLang('ru')">
-    <img src="https://flagcdn.com/40x30/ar.png" alt="العربية" onclick="setLang('ar')">
+    <img src="https://flagcdn.com/40x30/sa.png" alt="العربية" onclick="setLang('ar')">
     <img src="https://flagcdn.com/40x30/cn.png" alt="中文" onclick="setLang('zh')">
+  </div>
+
+  <div class="bottom-section">
+    <div class="cards">
+
+      <div class="card">
+        <h3 id="testimonialTitle"></h3>
+        <p id="testimonialText"></p>
+        <a href="mailto:contact@1europroject.com?subject=Testimonial 1 Euro Project" class="section-button" id="testimonialBtn"></a>
+      </div>
+
+      <div class="card">
+        <h3 id="impactTitle"></h3>
+        <p id="impactText"></p>
+        <a href="#" class="section-button" id="impactBtn"></a>
+      </div>
+
+      <div class="card">
+        <h3 id="ideaTitle"></h3>
+        <p id="ideaText"></p>
+        <a href="mailto:contact@1europroject.com?subject=Propunere idee / caz social" class="section-button" id="ideaBtn"></a>
+      </div>
+
+    </div>
   </div>
 
   <script>
     const translations = {
-      en: {
-        title: "One euro. One choice. A better life!",
-        subtitle: "A better world begins with a small act.\nDonate 1 euro and support an idea that can unite, heal, and inspire.\nEvery contribution says: 'I care.'\nAnd you're not alone.",
-        languageLabel: "Select language:", 
-        card: "Card",
-        paypal: "PayPal",
-        revolut: "Revolut",
-      },
-      de: {
-        title: "Ein Euro. Eine Entscheidung. Ein besseres Leben!",
-        subtitle: "Eine bessere Welt beginnt mit einer kleinen Geste.\nSpende 1 Euro und unterstütze eine Idee, die vereinen, heilen und inspirieren kann.\nJeder Beitrag sagt: 'Es ist mir wichtig.'\nUnd du bist nicht allein.",
-        languageLabel: "Sprache auswählen:",
-        card: "Karte",
-        paypal: "PayPal",
-        revolut: "Revolut",
-      },
-      es: {
-        title: "Un euro. Una elección. Una vida mejor!",
-        subtitle: "Un mundo mejor comienza con un pequeño gesto.\nDona 1 euro y apoya una idea que puede unir, sanar e inspirar.\nCada contribución dice: 'Me importa.'\nY no estás solo.",
-        languageLabel: "Selecciona idioma:",
-        card: "Card",
-        paypal: "PayPal",
-        revolut: "Revolut",
-      },
-      ru: {
-        title: "Один евро. Один выбор. Лучшая жизнь!",
-        subtitle: "Лучший мир начинается с маленького поступка.\nПожертвуй 1 евро и поддержи идею, способную объединить, исцелить и вдохновить.\nКаждое пожертвование говорит: 'Мне не всё равно.'\nИ ты не один.",
-        languageLabel: "Выберите язык:",
-        card: "Карта",
-        paypal: "PayPal",
-        revolut: "Revolut",
-      },
-      ar: {
-        title: "يورو واحد. خيار واحد. حياة أفضل!",
-        subtitle: "عالم أفضل يبدأ بفعل صغير.\nتبرع بيورو واحد وادعم فكرة يمكن أن توحد وتلهم وتشفي.\nكل مساهمة تعني: 'أنا أهتم.'\nوأنت لست وحدك.",
-        languageLabel: "اختر اللغة:",
-        card: "بطاقة",
-        paypal: "باي بال",
-        revolut: "ريفولوت",
-      },
-      zh: {
-        title: "一欧元。一个选择。更好的生活！",
-        subtitle: "更好的世界始于一个小小的行动。\n捐赠1欧元，支持一个可以团结、治愈和启发的理念。\n每一份捐助都在说：‘我在乎。’\n你并不孤单。",
-        languageLabel: "选择语言：",
-        card: "银行卡",
-        paypal: "PayPal",
-        revolut: "Revolut",
-      },
       ro: {
-        title: "Un euro. O alegere. O viață mai bună!",
-        subtitle: "O lume mai bună începe cu un gest mic.\nDonează 1 euro și susține o idee care poate uni, vindeca și inspira.\nFiecare contribuție spune: „Îmi pasă.”\nȘi nu ești singur.",
+        title: "Un <span>euro</span>.<br>O alegere.<br>O viață mai bună!",
+        subtitle: "O lume mai bună începe cu un gest mic.<br>Donează 1 euro și susține o idee care poate uni, vindeca și inspira.<br>Fiecare contribuție spune: „Îmi pasă.”<br>Și nu ești singur.",
+        donate: "Donează 1 Euro",
         languageLabel: "Selectează limba:",
         card: "Card",
         paypal: "PayPal",
         revolut: "Revolut",
+        testimonialTitle: "Testimoniale",
+        testimonialText: "Spune-ne ce crezi că se poate întâmpla, ce ți-ar plăcea să se întâmple și cum te face să te simți această idee.",
+        testimonialBtn: "Trimite testimonial",
+        impactTitle: "Impact live",
+        impactText: "Vizitatori: 0<br>Donații: 0<br>Total strâns: 0 €",
+        impactBtn: "Vezi impactul",
+        ideaTitle: "Propune o idee",
+        ideaText: "Spune-ne pentru ce cauză, caz social sau proiect ai vrea să strângem bani împreună.",
+        ideaBtn: "Trimite o idee"
+      },
+
+      en: {
+        title: "One <span>euro</span>.<br>One choice.<br>A better life!",
+        subtitle: "A better world begins with a small act.<br>Donate 1 euro and support an idea that can unite, heal and inspire.<br>Every contribution says: “I care.”<br>And you are not alone.",
+        donate: "Donate 1 Euro",
+        languageLabel: "Select language:",
+        card: "Card",
+        paypal: "PayPal",
+        revolut: "Revolut",
+        testimonialTitle: "Testimonials",
+        testimonialText: "Tell us what you believe could happen, what you would like to happen and how this idea makes you feel.",
+        testimonialBtn: "Send testimonial",
+        impactTitle: "Live impact",
+        impactText: "Visitors: 0<br>Donations: 0<br>Total raised: 0 €",
+        impactBtn: "See impact",
+        ideaTitle: "Suggest an idea",
+        ideaText: "Tell us what cause, social case or project you would like us to raise money for together.",
+        ideaBtn: "Send an idea"
+      },
+
+      de: {
+        title: "Ein <span>Euro</span>.<br>Eine Entscheidung.<br>Ein besseres Leben!",
+        subtitle: "Eine bessere Welt beginnt mit einer kleinen Geste.<br>Spende 1 Euro und unterstütze eine Idee, die verbinden, heilen und inspirieren kann.<br>Jeder Beitrag sagt: „Es ist mir wichtig.“<br>Und du bist nicht allein.",
+        donate: "1 Euro spenden",
+        languageLabel: "Sprache auswählen:",
+        card: "Karte",
+        paypal: "PayPal",
+        revolut: "Revolut",
+        testimonialTitle: "Testimonials",
+        testimonialText: "Sag uns, was deiner Meinung nach passieren könnte, was du dir wünschen würdest und wie dich diese Idee fühlen lässt.",
+        testimonialBtn: "Testimonial senden",
+        impactTitle: "Live-Wirkung",
+        impactText: "Besucher: 0<br>Spenden: 0<br>Gesammelt: 0 €",
+        impactBtn: "Wirkung ansehen",
+        ideaTitle: "Idee vorschlagen",
+        ideaText: "Sag uns, für welchen Zweck, sozialen Fall oder welches Projekt wir gemeinsam Geld sammeln sollten.",
+        ideaBtn: "Idee senden"
+      },
+
+      es: {
+        title: "Un <span>euro</span>.<br>Una elección.<br>Una vida mejor!",
+        subtitle: "Un mundo mejor comienza con un pequeño gesto.<br>Dona 1 euro y apoya una idea que puede unir, sanar e inspirar.<br>Cada contribución dice: “Me importa.”<br>Y no estás solo.",
+        donate: "Donar 1 Euro",
+        languageLabel: "Selecciona idioma:",
+        card: "Tarjeta",
+        paypal: "PayPal",
+        revolut: "Revolut",
+        testimonialTitle: "Testimonios",
+        testimonialText: "Cuéntanos qué crees que podría pasar, qué te gustaría que pasara y cómo te hace sentir esta idea.",
+        testimonialBtn: "Enviar testimonio",
+        impactTitle: "Impacto en vivo",
+        impactText: "Visitantes: 0<br>Donaciones: 0<br>Total recaudado: 0 €",
+        impactBtn: "Ver impacto",
+        ideaTitle: "Propón una idea",
+        ideaText: "Cuéntanos para qué causa, caso social o proyecto te gustaría que recaudemos dinero juntos.",
+        ideaBtn: "Enviar idea"
+      },
+
+      ru: {
+        title: "Один <span>евро</span>.<br>Один выбор.<br>Лучшая жизнь!",
+        subtitle: "Лучший мир начинается с маленького поступка.<br>Пожертвуй 1 евро и поддержи идею, которая может объединять, исцелять и вдохновлять.<br>Каждый вклад говорит: «Мне не всё равно».<br>И ты не один.",
+        donate: "Пожертвовать 1 евро",
+        languageLabel: "Выберите язык:",
+        card: "Карта",
+        paypal: "PayPal",
+        revolut: "Revolut",
+        testimonialTitle: "Отзывы",
+        testimonialText: "Расскажите, что, по вашему мнению, может произойти, чего бы вы хотели и какие чувства вызывает у вас эта идея.",
+        testimonialBtn: "Отправить отзыв",
+        impactTitle: "Живое влияние",
+        impactText: "Посетители: 0<br>Пожертвования: 0<br>Собрано: 0 €",
+        impactBtn: "Посмотреть влияние",
+        ideaTitle: "Предложить идею",
+        ideaText: "Расскажите, для какой цели, социального случая или проекта вы хотели бы собрать деньги вместе с нами.",
+        ideaBtn: "Отправить идею"
+      },
+
+      ar: {
+        title: "<span>يورو</span> واحد.<br>اختيار واحد.<br>حياة أفضل!",
+        subtitle: "عالم أفضل يبدأ بفعل صغير.<br>تبرع بيورو واحد وادعم فكرة يمكن أن توحد وتشفي وتلهم.<br>كل مساهمة تقول: «أنا أهتم».<br>وأنت لست وحدك.",
+        donate: "تبرع بـ 1 يورو",
+        languageLabel: "اختر اللغة:",
+        card: "بطاقة",
+        paypal: "PayPal",
+        revolut: "Revolut",
+        testimonialTitle: "شهادات",
+        testimonialText: "أخبرنا بما تعتقد أنه يمكن أن يحدث، وما الذي تتمنى حدوثه، وكيف تجعلك هذه الفكرة تشعر.",
+        testimonialBtn: "أرسل شهادة",
+        impactTitle: "الأثر المباشر",
+        impactText: "الزوار: 0<br>التبرعات: 0<br>الإجمالي: 0 €",
+        impactBtn: "عرض الأثر",
+        ideaTitle: "اقترح فكرة",
+        ideaText: "أخبرنا عن القضية أو الحالة الاجتماعية أو المشروع الذي ترغب أن نجمع المال من أجله معًا.",
+        ideaBtn: "أرسل فكرة"
+      },
+
+      zh: {
+        title: "一<span>欧元</span>。<br>一个选择。<br>更好的生活！",
+        subtitle: "更好的世界始于一个小小的行动。<br>捐赠1欧元，支持一个可以团结、治愈并启发他人的想法。<br>每一份贡献都在说：“我在乎。”<br>你并不孤单。",
+        donate: "捐赠 1 欧元",
+        languageLabel: "选择语言：",
+        card: "银行卡",
+        paypal: "PayPal",
+        revolut: "Revolut",
+        testimonialTitle: "感言",
+        testimonialText: "告诉我们你认为可能会发生什么，你希望发生什么，以及这个想法带给你的感受。",
+        testimonialBtn: "发送感言",
+        impactTitle: "实时影响",
+        impactText: "访问者：0<br>捐赠：0<br>已筹集：0 €",
+        impactBtn: "查看影响",
+        ideaTitle: "提出想法",
+        ideaText: "告诉我们你希望我们一起为哪个公益案例、社会项目或想法筹集资金。",
+        ideaBtn: "发送想法"
       }
     };
 
-  function setLang(lang) {
-  if (translations[lang]) {
+    function setLang(lang) {
+      if (!translations[lang]) return;
 
-    document.getElementById("title").innerText =
-      translations[lang].title;
+      document.getElementById("title").innerHTML = translations[lang].title;
+      document.getElementById("subtitle").innerHTML = translations[lang].subtitle;
+      document.getElementById("donateBtn").innerText = translations[lang].donate;
+      document.getElementById("language-label").innerText = translations[lang].languageLabel;
 
-    document.getElementById("subtitle").innerText =
-      translations[lang].subtitle;
+      document.getElementById("cardBtn").innerText = translations[lang].card;
+      document.getElementById("paypalBtn").innerText = translations[lang].paypal;
+      document.getElementById("revolutBtn").innerText = translations[lang].revolut;
 
-    document.getElementById("language-label").innerText =
-      translations[lang].languageLabel;
+      document.getElementById("testimonialTitle").innerText = translations[lang].testimonialTitle;
+      document.getElementById("testimonialText").innerText = translations[lang].testimonialText;
+      document.getElementById("testimonialBtn").innerText = translations[lang].testimonialBtn;
 
-    if (document.getElementById("cardBtn")) {
-      document.getElementById("cardBtn").innerText =
-        translations[lang].card;
+      document.getElementById("impactTitle").innerText = translations[lang].impactTitle;
+      document.getElementById("impactText").innerHTML = translations[lang].impactText;
+      document.getElementById("impactBtn").innerText = translations[lang].impactBtn;
+
+      document.getElementById("ideaTitle").innerText = translations[lang].ideaTitle;
+      document.getElementById("ideaText").innerText = translations[lang].ideaText;
+      document.getElementById("ideaBtn").innerText = translations[lang].ideaBtn;
+
+      document.documentElement.lang = lang;
     }
 
-    if (document.getElementById("paypalBtn")) {
-      document.getElementById("paypalBtn").innerText =
-        translations[lang].paypal;
-    }
-
-    if (document.getElementById("revolutBtn")) {
-      document.getElementById("revolutBtn").innerText =
-        translations[lang].revolut;
-    }
-  }
-}
-      function toggleDonations() {
-      const box = document.getElementById("donation-options");
-      box.style.display = box.style.display === "none" ? "block" : "none";
+    function togglePayments() {
+      document.getElementById("paymentMethods").classList.toggle("show");
     }
 
     window.onload = function() {
       const userLang = navigator.language || navigator.userLanguage;
       const shortLang = userLang.split('-')[0];
+
       if (translations[shortLang]) {
         setLang(shortLang);
       } else {
         setLang('ro');
       }
-    }
+    };
   </script>
-  <div class="bottom-section">
-  <div class="cards">
-
-    <div class="card">
-      <h3>Testimoniale</h3>
-      <p>spune-mi  ce crezi  ca se va intampla si ce  ti-ar  placea sa se  intample si... CUM TE SIMTI!.</p>
-      <a href="#" class="section-button">Vezi testimoniale</a>
-    </div>
-
-    <div class="card">
-      <h3>Impact live</h3>
-      <p>
-        Vizitatori: <strong>0</strong><br>
-        Donații: <strong>0</strong><br>
-        Total strâns: <strong>0 €</strong>
-      </p>
-      <a href="#" class="section-button">Vezi impactul</a>
-    </div>
-
-    <div class="card">
-      <h3>Propune o idee</h3>
-      <p>Spune-mi daca ai vreo idee pentru care sau pentru cine ai vrea sa strangi bani!.</p>
-      <a href="mailto:contact@1europroject.com?subject=Propunere idee / caz social" class="section-button">
-        Trimite o idee
-      </a>
-    </div>
-
-  </div>
-</div>
-
-  
-</div>
-</body>
-<script>
-function togglePayments() {
-  document.getElementById("paymentMethods").classList.toggle("show");
-}
-</script>
 
 </body>
 </html>
-
