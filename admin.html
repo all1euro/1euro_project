@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Admin · 1 Euro Project</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    body { background: var(--teal-100); }
+    .admin { max-width: 960px; margin: 0 auto; padding: 32px 20px 80px; }
+    .admin h1 { font-size: 34px; margin: 0 0 4px; }
+    .admin h2 { font-family: var(--font-head); font-size: 24px; margin: 0 0 16px; }
+    .panel { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; margin-top: 24px; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-end; }
+    .row label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500; flex: 1 1 140px; }
+    .row input, .row select {
+      padding: 10px 12px; border: 1px solid rgba(6,47,47,.18); border-radius: 10px; font: 15px var(--font-body);
+    }
+    .mini-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .mini-stats div { background: var(--teal-100); border-radius: 12px; padding: 14px; text-align: center; }
+    .mini-stats strong { display: block; font-size: 26px; font-family: var(--font-head); }
+    .mini-stats span { font-size: 13px; color: var(--muted); }
+    .item { border: 1px solid rgba(6,47,47,.1); border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+    .item p { margin: 6px 0 12px; white-space: pre-line; overflow-wrap: anywhere; }
+    .meta { font-size: 13px; color: var(--muted); }
+    .tag { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 999px; margin-inline-end: 8px; }
+    .tag.testimonial { background: #fff2cc; color: #7a5a00; }
+    .tag.idea { background: #d9f2ec; color: #0a4747; }
+    .actions { display: flex; gap: 8px; }
+    .btn-danger { background: #fde8e7; color: #b3261e; }
+    .empty { color: var(--muted); font-size: 14px; }
+    .msg { font-size: 14px; margin-top: 12px; min-height: 1.2em; }
+    .msg.err { color: #b3261e; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: start; padding: 8px 6px; border-bottom: 1px solid rgba(6,47,47,.08); }
+    @media (max-width: 640px) { .mini-stats { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="admin">
+    <h1>Admin</h1>
+    <p class="meta">1 Euro Project · testimoniale, idei și donații</p>
+
+    <!-- Login -->
+    <section class="panel" id="loginPanel">
+      <h2>Autentificare</h2>
+      <form id="loginForm" class="row">
+        <label>Parola de admin
+          <input type="password" id="password" autocomplete="current-password" required>
+        </label>
+        <button class="btn btn-gold" type="submit">Intră</button>
+      </form>
+      <p class="msg err" id="loginMsg"></p>
+    </section>
+
+    <div id="dashboard" hidden>
+      <section class="panel">
+        <div class="row" style="justify-content: space-between; align-items: center;">
+          <h2 style="margin:0">Cifre live</h2>
+          <button class="btn btn-ghost btn-sm" id="logoutBtn" type="button">Ieși</button>
+        </div>
+        <div class="mini-stats" style="margin-top:16px">
+          <div><strong id="sVisitors">0</strong><span>Vizitatori</span></div>
+          <div><strong id="sDonations">0</strong><span>Oameni care au donat</span></div>
+          <div><strong id="sTotal">0 €</strong><span>Total strâns</span></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Adaugă donații (PayPal / Revolut)</h2>
+        <p class="meta">Donațiile pe card (Stripe) se vor număra automat. Pe cele din PayPal și Revolut le adaugi aici, de exemplu o dată pe zi. Pentru corecturi poți folosi numere negative.</p>
+        <form id="donationForm" class="row" style="margin-top:12px">
+          <label>Sursa
+            <select id="dSource">
+              <option value="paypal">PayPal</option>
+              <option value="revolut">Revolut</option>
+              <option value="stripe">Stripe (manual)</option>
+              <option value="other">Altă sursă</option>
+            </select>
+          </label>
+          <label>Nr. de oameni
+            <input type="number" id="dCount" step="1" value="1" required>
+          </label>
+          <label>Suma totală (€)
+            <input type="number" id="dAmount" step="0.01" value="1" required>
+          </label>
+          <label>Notă (opțional)
+            <input type="text" id="dNote" maxlength="200" placeholder="ex. PayPal 20–24 sept.">
+          </label>
+          <button class="btn btn-gold" type="submit">Adaugă</button>
+        </form>
+        <p class="msg" id="donationMsg"></p>
+      </section>
+
+      <section class="panel">
+        <h2>În așteptare <span class="meta" id="pendingCount"></span></h2>
+        <div id="pendingList"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Testimoniale publicate</h2>
+        <div id="approvedList"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Idei citite</h2>
+        <div id="ideasList"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Istoric donații adăugate</h2>
+        <div id="donationLog"></div>
+      </section>
+    </div>
+  </div>
+
+  <script src="assets/admin.js"></script>
+</body>
+</html>
